@@ -410,13 +410,12 @@ async function askQuestion(question) {
     `;
   } else {
     try {
-      const response = await fetch("https://rentychatbotserver.onrender.com/chat", {
+const response = await fetch("https://rentychatbotserver.onrender.com/chat", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({ message })
-  
+  body: JSON.stringify({ message: question }) // ✅ במקום userMessage
 });
 
       const data = await response.json();
