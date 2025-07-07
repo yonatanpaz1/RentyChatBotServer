@@ -308,7 +308,7 @@
     const response = await fetch("/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: message })
+        body: JSON.stringify({ message })
 
     });
 
@@ -415,7 +415,8 @@ async function askQuestion(question) {
   headers: {
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({ message: userMessage })
+  body: JSON.stringify({ message })
+  
 });
 
       const data = await response.json();
